@@ -1,0 +1,390 @@
+{
+	"id": "vs.sensibo",
+	"version": "1.0.2",
+	"compatibility": ">=1.5.3",
+	"sdk": 2,
+	"name": {
+		"en": "Sensibo Sky"
+	},
+	"description": {
+		"en": "Sensibo Sky Control"
+	},
+	"category": [
+		"appliances",
+		"climate"
+	],
+	"tags": {
+		"en": [
+			"sensibo",
+			"temperature control",
+			"heating",
+			"humidity"
+		]
+	},
+	"images": {
+		"large": "/assets/images/large.png",
+		"small": "/assets/images/small.png"
+	},
+	"author": {
+		"name": "VIEN SON",
+		"email": "kietlt@microstar.com.vn"
+	},
+	"contributing": {
+		"donate": {
+			"paypal": {
+			"username": "kusanghi"
+			}
+		}
+		},
+	"capabilities": {
+		"thermostat_mode": {
+			"type": "enum",
+			"title": {
+				"en": "Thermostat mode",
+				"nl": "Thermostaat modus"
+			},
+			"desc": {
+				"en": "Mode of the thermostat",
+				"nl": "Modus van de thermostaat"
+			},
+			"values": [
+				{
+					"id": "off",
+					"title": {
+						"en": "AC Off"
+					}
+				},
+				{
+					"id": "cool",
+					"title": {
+						"en": "Cool"
+					}
+				},
+				{
+					"id": "auto",
+					"title": {
+						"en": "Auto"
+					}
+				},
+				{
+					"id": "fan",
+					"title": {
+						"en": "Fan"
+					}
+				},
+				{
+					"id": "dry",
+					"title": {
+						"en": "Dry"
+					}
+				}
+			],
+			"getable": true,
+			"setable": true,
+			"uiComponent": "picker",
+			"$flow": {
+				"triggers": [
+					{
+						"id": "thermostat_mode_changed",
+						"title": {
+							"en": "Thermostat mode has changed",
+							"nl": "Thermostaat modus is veranderd"
+						},
+						"args": [
+							{
+								"name": "thermostat_mode",
+								"type": "dropdown",
+								"values": [
+									{
+										"id": "auto",
+										"title": {
+											"en": "Automatic",
+											"nl": "Automatisch"
+										}
+									},
+									{
+										"id": "fan",
+										"title": {
+											"en": "Fan"
+										}
+									},	
+									{
+										"id": "Dry",
+										"title": {
+											"en": "Dry"
+										}
+									},				
+									{
+										"id": "cool",
+										"title": {
+											"en": "Cool",
+											"nl": "Koelen"
+										}
+									},
+									{
+										"id": "off",
+										"title": {
+											"en": "Off",
+											"nl": "Uit"
+										}
+									}
+								]
+							}
+						]
+					}
+				],
+				"conditions": [
+					{
+						"id": "thermostat_mode_is",
+						"title": {
+							"en": "Thermostat mode is",
+							"nl": "Thermostaat modus is"
+						},
+						"args": [
+							{
+								"name": "thermostat_mode",
+								"type": "dropdown",
+								"values": [
+									{
+										"id": "auto",
+										"title": {
+											"en": "Automatic",
+											"nl": "Automatisch"
+										}
+									},
+									{
+										"id": "fan",
+										"title": {
+											"en": "Fan"
+										}
+									},
+									{
+										"id": "dry",
+										"title": {
+											"en": "Dry"
+										}
+									},				
+									{
+										"id": "cool",
+										"title": {
+											"en": "Cool",
+											"nl": "Koelen"
+										}
+									},
+									{
+										"id": "off",
+										"title": {
+											"en": "Off",
+											"nl": "Uit"
+										}
+									}
+								]
+							}
+						]
+					}
+				],
+				"actions": [
+					{
+						"id": "thermostat_mode_set",
+						"title": {
+							"en": "Set the mode",
+							"nl": "Stel de modus in"
+						},
+						"args": [
+							{
+								"name": "thermostat_mode",
+								"type": "dropdown",
+								"values": [
+									{
+										"id": "auto",
+										"title": {
+											"en": "Automatic",
+											"nl": "Automatisch"
+										}
+									},
+									{
+										"id": "fan",
+										"title": {
+											"en": "Fan"
+										}
+									},
+									{
+										"id": "dry",
+										"title": {
+											"en": "Dry"
+										}
+									},				
+									{
+										"id": "cool",
+										"title": {
+											"en": "Cool",
+											"nl": "Koelen"
+										}
+									},
+									{
+										"id": "off",
+										"title": {
+											"en": "Off",
+											"nl": "Uit"
+										}
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		},
+		"fan_rate": {
+			"type": "enum",
+			"title": {
+				"en": "Airco fan rate capability"
+			},
+			"getable": true,
+			"setable": true,
+			"values": [
+				{
+					"id": "auto",
+					"title": {
+						"en": "F Auto"
+					}
+				},
+				{
+					"id": "low",
+					"title": {
+						"en": "F Low"
+					}
+				},
+				{
+					"id": "medium",
+					"title": {
+						"en": "F Medium"
+					}
+				},
+				{
+					"id": "high",
+					"title": {
+						"en": "F High"
+					}
+				}
+			]
+		},
+		"fan_direction": {
+			"type": "enum",
+			"title": {
+				"en": "Swing"
+			},
+			"getable": true,
+			"setable": true,
+			"values": [
+				{
+					"id": "stopped",
+					"title": {
+						"en": "SW Off"
+					}
+				},
+				{
+					"id": "rangeFull",
+					"title": {
+						"en": "SW Auto"
+					}
+				}
+			]
+		}
+	},
+	"drivers": [
+		{
+			"id": "Sensibo_driver",
+			"name": {
+				"en": "Sensibo Device"
+			},
+			"class": "thermostat",
+			"capabilities": [
+				"measure_temperature",
+				"measure_humidity",
+				"thermostat_mode",
+				"fan_rate",
+				"fan_direction",
+				"target_temperature"
+			],
+			"capabilitiesOptions": {
+				"fan_rate": {
+					"title": {
+						"en": "FanMode"
+					}
+				},
+				"fan_direction": {
+					"title": {
+						"en": "Swings"
+					}
+				}
+			},
+			"mobile": {
+				"components": [
+					{
+						"id": "picker",
+						"capabilities": [
+							"thermostat_mode"
+						],
+						"options": {
+							"showTitle": true
+						}
+					},
+					{
+						"id": "picker",
+						"capabilities": [
+							"fan_rate"
+						],
+						"options": {
+							"showTitle": true
+						}
+					},
+					{
+						"id": "picker",
+						"capabilities": [
+							"fan_direction"
+						],
+						"options": {
+							"showTitle": true
+						}
+					},
+					{
+						"id": "thermostat",
+						"capabilities": [
+							"target_temperature"
+						]
+					},
+			{
+						"id": "sensor",
+						"capabilities": [
+							"measure_temperature"
+						]
+					},
+			{
+						"id": "sensor",
+						"capabilities": [
+							"measure_humidity"
+						]
+					}
+				]
+			},
+			"images": {
+				"large": "/drivers/Sensibo_driver/assets/images/large.png",
+				"small": "/drivers/Sensibo_driver/assets/images/small.png"
+			},
+			"pair": [
+				{
+					"id": "list_devices",
+					"template": "list_devices",
+					"navigation": {
+						"next": "add_devices"
+					}
+				},
+				{
+					"id": "add_devices",
+					"template": "add_devices"
+				}
+			]
+		}
+	]
+}

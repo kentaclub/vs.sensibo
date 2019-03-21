@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <!-- The '/homey.js' script must be included in your settings view to work -->
+    <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
+
+</head>
+
+<body>
+
+    <h1 data-i18n="SENSIBO-App">
+        <!--
+            This field will automatically be filled by a translated string with key 'settings.title'.
+            Read more about translations at Internationalization.
+            -->
+    </h1>
+    <p data-i18n="Sensibo Settings">
+        <!--
+            This field will also be translated
+            -->
+    </p>
+
+    <fieldset>
+        <legend>My Settings</legend>
+
+        <div class="field row">
+            <label for="apikey">API-Key Sensibo</label>
+            <input id="apikey" type="text" value="" />
+        </div>
+        <div class="field row">
+            <label for="interval">Interval Sync Sensibo</label>
+            <input id="interval" type="number" min=5 max=30 value=5 />
+        </div>
+
+    </fieldset>
+
+    <button id="save" class="right">Save changes</button>
+
+    <script type="text/javascript">
+
+        // a method named 'onHomeyReady' must be present in your code
+        function onHomeyReady(Homey) {
+
+            // Tell Homey we're ready to be displayed
+            Homey.ready();
+
+            var apikeyElement = document.getElementById('apikey');
+            var intervalElement = document.getElementById('interval');
+            var saveElement = document.getElementById('save');
+
+            Homey.get('apikey', function (err, apikey) {
+                if (err) return Homey.alert(err);
+                apikeyElement.value = apikey;
+            });
+            Homey.get('interval', function (err, valueInt) {
+                if (err) return Homey.alert(err);
+                intervalElement.value = valueInt;
+            });
+            saveElement.addEventListener('click', function (e) {
+                Homey.set('apikey', apikeyElement.value, function (err) {
+                    if (err) return Homey.alert(err);
+                    else{
+                        Homey.ManagerSettings.set("apikey", apikeyElement.value);
+                    }
+                });
+                Homey.set('interval', intervalElement.value, function (err) {
+                    if (err) return Homey.alert(err);
+                    else{
+                        Homey.ManagerSettings.set("interval", intervalElement.value);
+                    }
+                });
+                Homey.alert("Save settings success");
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>
