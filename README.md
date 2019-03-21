@@ -1,6 +1,7 @@
 # Sensibo Sky Control
+* Make your air conditioner smart
 
-To install:
+## To install:
 
 * Get an API-key from https://home.sensibo.com/me/api
 * Install the app
@@ -8,16 +9,23 @@ To install:
 
 Device: Sensibo Sky
 
-Triggers
+## Triggers
 * The temperature changed.
 * The target temperature changed.
-
-Actions
+* The humidity changed.
+* Thermostat mode has changed.
+## Conditions
+* Thermostat mode is: Autmatic, Fan, Dry, Cool, Off.
+## Actions
 * Set the target temperature.
-* Set the mode of AC.
+* Set the mode of AC : Autmatic, Fan, Dry, Cool, Off.
 
 
 Release Notes:
+1.0.2
+* Fix some error flows.
+* Add function Fan speed, Fan direction
+1.0.1
+* Compatible SDK v2
 1.0.0
 * Beta version for app store
-* Compatibility >=1.5.3 and also with V2
