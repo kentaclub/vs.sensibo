@@ -23,11 +23,11 @@ Device Support:
 * Set the mode of AC : Autmatic, Fan, Dry, Cool, Off.
 
 
-Release Notes:
-1.0.2
+# Release Notes:
+## 1.0.2
 * Fix some error flows.
 * Add function Fan speed, Fan direction
-1.0.1
+## 1.0.1
 * Compatible SDK v2
-1.0.0
+## 1.0.0
 * Beta version for app store
