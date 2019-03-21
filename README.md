@@ -7,7 +7,9 @@
 * Install the app
 * Configure the API-key in the Configure app menu. This must be done before adding the Sensibo device
 
-Device: Sensibo Sky
+Device Support: 
+* Sensibo Sky
+* Sensibo Plus ( Future support )
 
 ## Triggers
 * The temperature changed.
