@@ -1,3 +1,5 @@
+![Front](https://user-images.githubusercontent.com/42129672/56488360-5adbaa80-6508-11e9-92f7-66257f39371d.png)
+
 # Sensibo Sky Control
 * Make your air conditioner smart
 
